@@ -1,7 +1,8 @@
 // import { useDispatch, useSelector } from "react-redux";
 // import { useEffect, useState } from "react";
 
-import Header from "components/Header";
+import Footer from 'components/Footer';
+import Header from 'components/Header';
 
 // import Test from "components/Test";
 // import Result from "components/Result";
@@ -13,7 +14,12 @@ import Header from "components/Header";
 // import CommandPallet from "components/CommandPallet";
 
 function App() {
-  return <Header />;
+  return (
+    <>
+      <Header />
+      <Footer />
+    </>
+  );
 }
 
 export default App;
