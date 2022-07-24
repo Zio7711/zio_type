@@ -72,13 +72,16 @@ function Header() {
       document.querySelector('.theme')?.childNodes.forEach((el) => {
         if (el instanceof HTMLButtonElement) el.classList.remove('selected');
       });
+
       document
         .querySelector(`button[value="${theme}"]`)
         ?.classList.add('selected');
+        
       document.body.children[1].classList.remove(...options.theme);
       document.body.children[1].classList.add(theme);
       localStorage.setItem('theme', theme);
     }
+
   }, [dispatch, theme]);
 
   // Set Time
@@ -87,11 +90,14 @@ function Header() {
       document.querySelector('.time')?.childNodes.forEach((el) => {
         if (el instanceof HTMLButtonElement) el.classList.remove('selected');
       });
+
       document
         .querySelector(`button[value="${timeLimit}"]`)
         ?.classList.add('selected');
+
       dispatch(setTime(timeLimit));
       localStorage.setItem('time', `${timeLimit}`);
+      
       resetTest();
     }
   }, [dispatch, timeLimit]);
@@ -141,9 +147,11 @@ function Header() {
 
   return (
     <header className={timerId ? 'hidden' : undefined}>
+
       <a href='.' className='brand'>
-        typing-test
+        Zio_Type
       </a>
+
       <div className='buttons'>
         {Object.entries(options).map(([option, choices]) => (
           <div key={option} className={option}>
